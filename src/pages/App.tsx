@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { DynamicContent } from "../components/DynamicContent";
+import { HeavyDynamicContent } from "../components/HeavyDynamicContent";
 
 export const App = () => {
 	const [currentComponent, setCurrentComponent] = useState<string | null>(
@@ -19,6 +20,7 @@ export const App = () => {
 			<body>
 				<Navbar onNavigate={handleNavigate} />
 				<DynamicContent currentComponent={currentComponent} />
+				{/* <HeavyDynamicContent currentComponent={currentComponent} /> */}
 			</body>
 		</html>
 	);

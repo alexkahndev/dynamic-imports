@@ -10,6 +10,7 @@ export const Navbar = ({ onNavigate }: NavbarProps) => {
 		<nav>
 			<button onClick={() => onNavigate("Temp1")}>Temp1</button>
 			<button onClick={() => onNavigate("Temp2")}>Temp2</button>
+			<button onClick={() => onNavigate("Temp3")}>Temp3</button>
 		</nav>
 	);
 };
