@@ -33,5 +33,4 @@ const app = new Elysia()
 
 if (app) {
 	console.log(`server started on http://${host}:${port}`);
-	console.log(`View documentation at "${app.server!.url}swagger" in your browser`);
 }
