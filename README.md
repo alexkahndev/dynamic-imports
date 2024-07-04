@@ -1,15 +1,9 @@
-# Elysia with Bun runtime
+This repo attempts to use dynamic imports in order to make a page of an app where the user can load multiple heavy components but only one needs to be loaded at a time. The code correctly bundles and has the splitting flag set to true so there are chunks. The issue is that when the code is run in the browser the following error occurs:  `Uncaught SyntaxError: Cannot use import statement outside a module (at AppIndex-1720072088174.js:1:1)`. 
 
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
+The issue is suspected to be related to using the React components as pages with their own html tag and then server side rendering them. It also could just be using a wrong flag setting in the tsconfig or build config.
 
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
+The goal of this repo is to learn more about dynamic imports specifically in the Bun eco-system and any help would be appreciated.
 
-Open http://localhost:3000/ with your browser to see the result.
+- download from github
+- `bun install`
+- `bun dev`
