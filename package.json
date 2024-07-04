@@ -3,13 +3,24 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/server.ts",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css}\""
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/static": "^1.0.3",
+    "bun-types": "^1.1.18",
+    "elysia": "latest",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-lazyload": "^3.2.1",
+    "shelljs": "^0.8.5"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-lazyload": "^3.2.3",
+    "@types/shelljs": "^0.8.15"
   },
-  "module": "src/index.js"
+  "module": "src/server.js",
+  "type": "module"
 }
