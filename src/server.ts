@@ -22,7 +22,7 @@ async function handleRequest(pageComponent: any, index: string) {
 }
 
 const app = new Elysia()
-	.get("/", () => handleRequest(App, `indexes/AppIndex.js`))
+	.get("/", () => handleRequest(App, `indexes/AppIndex-${buildTimeStamp}.js`))
 	.use(
 		staticPlugin({
 			assets: "./build",

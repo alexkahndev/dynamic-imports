@@ -48,7 +48,7 @@ export async function build() {
 		entrypoints: entryPaths,
 		outdir: "./build",
 		root: "./src",
-		naming: `[dir]/[name].[ext]`,
+		naming: `[dir]/[name]-${buildTimeStamp}.[ext]`,
 		//minify: true,
 		splitting: true,
 		target: "browser",
