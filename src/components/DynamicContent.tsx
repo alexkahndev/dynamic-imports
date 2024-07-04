@@ -1,4 +1,4 @@
-import { lazy,  LazyExoticComponent,  Suspense } from "react";
+import { lazy, LazyExoticComponent, Suspense } from "react";
 
 type DynamicContentProps = {
 	currentComponent: string | null;
@@ -13,11 +13,12 @@ const components: { [key: string]: LazyExoticComponent<() => JSX.Element> } = {
 	),
 	Temp3: lazy(() =>
 		import("./content/Temp3").then((module) => ({ default: module.Temp3 }))
-	),
+	)
 };
 export const DynamicContent = ({ currentComponent }: DynamicContentProps) => {
-	
-	const MainComponent = currentComponent ? components[currentComponent] : () => <div>Select a component</div>;
+	const MainComponent = currentComponent
+		? components[currentComponent]
+		: () => <div>Select a component</div>;
 
 	return (
 		<main>
