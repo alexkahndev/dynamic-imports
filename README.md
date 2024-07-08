@@ -7,3 +7,5 @@ The goal of this repo is to learn more about dynamic imports specifically in the
 - download from github
 - `bun install`
 - `bun dev`
+
+This issue has been solved and is live on the most recent version. The issue was that when loading the client side javascript the code was previously using the variable `bootstrapScripts` when it should have been `bootstrapModules` since that will specify <script type="module"/> 
