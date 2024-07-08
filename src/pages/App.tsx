@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { Navbar } from "../components/Navbar";
-import { DynamicContent } from "../components/DynamicContent";
-import { HeavyDynamicContent } from "../components/HeavyDynamicContent";
+import { DynamicBody } from "../components/DynamicBody";
 
 export const App = () => {
 	const [currentComponent, setCurrentComponent] = useState<string | null>(
@@ -17,11 +15,10 @@ export const App = () => {
 			<head>
 				<title>Dynamic Module Loading</title>
 			</head>
-			<body>
-				<Navbar onNavigate={handleNavigate} />
-				<DynamicContent currentComponent={currentComponent} />
-				{/* <HeavyDynamicContent currentComponent={currentComponent} /> */}
-			</body>
+			<DynamicBody
+				currentComponent={currentComponent}
+				handleNavigate={handleNavigate}
+			/>
 		</html>
 	);
 };

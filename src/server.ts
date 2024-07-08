@@ -2,7 +2,7 @@ import { Elysia } from "elysia";
 import { staticPlugin } from "@elysiajs/static";
 import { build } from "./build";
 import { createElement } from "react";
-import { renderToReadableStream } from "react-dom/server.browser";
+import { renderToReadableStream } from "react-dom/server";
 import { App } from "./pages/App";
 
 const host = Bun.env.HOST || "localhost";
@@ -13,7 +13,7 @@ const buildTimeStamp = await build();
 async function handleRequest(pageComponent: any, index: string) {
 	const page = createElement(pageComponent);
 	const stream = await renderToReadableStream(page, {
-		bootstrapScripts: [index]
+		bootstrapModules: [index]
 	});
 
 	return new Response(stream, {
